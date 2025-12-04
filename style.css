@@ -8,12 +8,12 @@
   --text-muted: #6f5a4b;       /* 次要文字 / footer */
   --heading: #bc9481;          /* 小标题颜色（About Me / Projects 等） */
 
-  --hero-title: #edeae4;       /* 顶部大标题 */
-  --hero-subtitle: #edeae4;    /* 顶部描述文字 */
+  --hero-title: #f5f3ef;       /* 顶部大标题 */
+  --hero-subtitle: #bca080;    /* 顶部描述文字 */
 
   --btn-bg: #e5c0b3;           /* 按钮背景 */
   --btn-bg-hover: #d3a79a;     /* 按钮 hover 略深一点 */
-  --btn-text: #33251b;         /* 按钮文字 */
+  --btn-text: #f5f3ef;         /* 按钮文字 */
 
   --bg-page: #e9d7ce;          /* 整个页面背景 */
   --bg-content: #ebe3dc;       /* 中间卡片背景 */
