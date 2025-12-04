@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Serena Li · Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 连接到我们自己的 CSS 文件 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 顶部横幅：背景图 + 标题 + 按钮 -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <h1>Welcome to Serena's Portfolio</h1>
+      <p class="hero-subtitle">Serena's portfolio: projects, research, analytics work, and more.</p>
+      <a class="hero-btn" href="https://github.com/serenalimj/portfolio" target="_blank">
+        View on GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- 下面白色内容区，结构跟你现在页面类似 -->
+  <main class="content">
+    <section>
+      <h2>Welcome to Serena’s Portfolio</h2>
+      <p>
+        This site will showcase my projects, research, analytics work, and more.
+      </p>
+    </section>
+
+    <section>
+      <h3>About Me</h3>
+      <p>
+        I am an Economics–Mathematics student interested in business analytics,
+        data storytelling, and Nonviolent Communication (NVC).
+      </p>
+    </section>
+
+    <section>
+      <h3>Projects</h3>
+      <ul>
+        <li><strong>Nonprofit Accounting Software Analysis</strong> – comparison of nonprofit-oriented tools such as QuickBooks, Sage Intacct, and others.</li>
+        <li><strong>Data Visualization Projects</strong> – demographic and social data visualizations using R / Python.</li>
+        <li><strong>Music & Culture Essays</strong> – writing on 1990s music, media, and generation identity.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>NVC & Teaching</h3>
+      <p>
+        I design and facilitate Nonviolent Communication workshops and reading groups,
+        exploring self-connection, empathy, and grounded action.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Serena Li. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // 自动填当前年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
