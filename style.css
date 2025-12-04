@@ -1,16 +1,24 @@
-/* ====== 基本设置：这里改图片路径 / 颜色 ====== */
+/* ====== Serena theme: warm beige & rose ====== */
 :root {
-  /* 背景图路径：你的 pic.jpg 在根目录 */
+  /* 顶部背景图 */
   --hero-image: url("pic.jpg");
 
-  /* 文字和按钮颜色（可以根据喜好调整） */
-  --accent: #ff3f8e;        /* 标题、按钮的主粉色 */
-  --accent-dark: #c2185b;   /* hover 时更深一点的粉 */
-  --text-main: #333333;
-  --text-muted: #666666;
-  --bg-page: #f5f5f7;       /* 整个页面浅灰背景 */
-  --bg-content: #ffffff;    /* 中间内容卡片白色背景 */
-  --border-subtle: #e5e7eb;
+  /* 文字与颜色系统 */
+  --text-main: #33251b;        /* 正文 */
+  --text-muted: #6f5a4b;       /* 次要文字 / footer */
+  --heading: #bc9481;          /* 小标题颜色（About Me / Projects 等） */
+
+  --hero-title: #edeae4;       /* 顶部大标题 */
+  --hero-subtitle: #edeae4;    /* 顶部描述文字 */
+
+  --btn-bg: #e5c0b3;           /* 按钮背景 */
+  --btn-bg-hover: #d3a79a;     /* 按钮 hover 略深一点 */
+  --btn-text: #33251b;         /* 按钮文字 */
+
+  --bg-page: #e9d7ce;          /* 整个页面背景 */
+  --bg-content: #ebe3dc;       /* 中间卡片背景 */
+  --border-subtle: #ddc5b7;    /* 细边框 */
+
   --max-width: 880px;
   --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                system-ui, -webkit-system-font, "Helvetica Neue", Arial, sans-serif;
@@ -30,20 +38,21 @@ body {
   color: var(--text-main);
 }
 
-/* ====== 顶部横幅：只用背景图，不再加厚遮罩 ====== */
+/* ====== 顶部横幅：背景图 + 文本 ====== */
 
 .hero {
   position: relative;
-  min-height: 260px;
-  padding: 80px 16px 70px;
+  min-height: 340px;
+  padding: 90px 16px 80px;
   text-align: center;
-  color: #ffffff;
-  background-image: var(--hero-image);  /* 只用图片本身 */
+  color: var(--hero-title);
+  background-image: var(--hero-image);
   background-size: cover;
-  background-position: center center;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
 
-/* 即使 HTML 里还留着 .hero-overlay，也把它关掉 */
+/* 把 overlay 完全关掉，避免挡住图片 */
 .hero-overlay {
   display: none;
 }
@@ -52,17 +61,19 @@ body {
   position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); /* 让字在图片上更清晰一点 */
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); /* 让浅色字在图上更清晰 */
 }
 
 .hero h1 {
   font-size: 2.4rem;
   margin: 0 0 0.75rem;
+  color: var(--hero-title);
 }
 
 .hero-subtitle {
   margin: 0 0 1.5rem;
   font-size: 1.05rem;
+  color: var(--hero-subtitle);
 }
 
 /* 顶部按钮 */
@@ -70,29 +81,29 @@ body {
   display: inline-block;
   padding: 0.7rem 1.6rem;
   border-radius: 999px;
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
   transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
 
 .hero-btn:hover {
-  background: var(--accent-dark);
+  background: var(--btn-bg-hover);
   transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
 }
 
 /* ====== 中间白色内容卡片 ====== */
 
 .content {
   max-width: var(--max-width);
-  margin: -30px auto 40px;  /* 往上“浮”一点 */
+  margin: -30px auto 40px;
   background: var(--bg-content);
   border-radius: 12px;
   padding: 32px 24px 40px;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 12px 30px rgba(123, 88, 66, 0.18);
   border: 1px solid var(--border-subtle);
 }
 
@@ -101,7 +112,7 @@ body {
 }
 
 h2, h3 {
-  color: var(--accent-dark);
+  color: var(--heading);
   margin-top: 0;
 }
 
@@ -131,10 +142,11 @@ li {
 @media (max-width: 640px) {
   .hero {
     padding: 70px 12px 60px;
+    min-height: 300px;
   }
 
   .hero h1 {
-    font-size: 2.0rem;
+    font-size: 2rem;
   }
 
   .content {
