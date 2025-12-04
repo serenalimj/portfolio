@@ -1,7 +1,7 @@
 /* ====== 在这里改背景图路径 ======
    把 images/hero.jpg 换成你刚才上传的图片路径 */
 :root {
-  --hero-image: url("images/pic.jpg");
+  --hero-image: url("pic.jpg");
 
   /* 主色系你都可以改： */
   --hero-overlay-top: rgba(255, 105, 180, 0.85);   /* 顶部渐变色（粉色） */
