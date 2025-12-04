@@ -1,25 +1,22 @@
-/* ====== 在这里改背景图路径 ======
-   把 images/hero.jpg 换成你刚才上传的图片路径 */
+/* ====== 基本设置：这里改图片路径 / 颜色 ====== */
 :root {
+  /* 背景图路径：你的 pic.jpg 在根目录 */
   --hero-image: url("pic.jpg");
 
-  /* 主色系你都可以改： */
-  --hero-overlay-top: rgba(255, 105, 180, 0.85);   /* 顶部渐变色（粉色） */
-  --hero-overlay-bottom: rgba(72, 61, 139, 0.85);  /* 底部渐变色（紫/蓝） */
-
-  --accent: #ff69b4;           /* 按钮和标题的点缀色（粉色） */
-  --accent-dark: #c2185b;      /* hover 时更深的粉 */
-  --text-main: #333333;        /* 正文文字 */
-  --text-muted: #666666;       /* 次要文字 */
-  --bg-page: #f9fafb;          /* 页面整体浅灰背景 */
-  --bg-content: #ffffff;       /* 内容区域白底 */
-  --border-subtle: #e5e7eb;    /* 细边框颜色 */
+  /* 文字和按钮颜色（可以根据喜好调整） */
+  --accent: #ff3f8e;        /* 标题、按钮的主粉色 */
+  --accent-dark: #c2185b;   /* hover 时更深一点的粉 */
+  --text-main: #333333;
+  --text-muted: #666666;
+  --bg-page: #f5f5f7;       /* 整个页面浅灰背景 */
+  --bg-content: #ffffff;    /* 中间内容卡片白色背景 */
+  --border-subtle: #e5e7eb;
   --max-width: 880px;
   --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                system-ui, -webkit-system-font, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* 通用重置 */
+/* 全局基础样式 */
 *,
 *::before,
 *::after {
@@ -33,35 +30,29 @@ body {
   color: var(--text-main);
 }
 
-/* 顶部横幅：背景图 + 渐变罩层 */
+/* ====== 顶部横幅：只用背景图，不再加厚遮罩 ====== */
+
 .hero {
   position: relative;
   min-height: 260px;
   padding: 80px 16px 70px;
   text-align: center;
-  color: white;
-  background-image:
-    var(--hero-image);
+  color: #ffffff;
+  background-image: var(--hero-image);  /* 只用图片本身 */
   background-size: cover;
   background-position: center center;
 }
 
-/* 额外一层紫粉渐变，这样你可以单独调颜色 */
+/* 即使 HTML 里还留着 .hero-overlay，也把它关掉 */
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    var(--hero-overlay-top),
-    var(--hero-overlay-bottom)
-  );
-  opacity: 0.7;
+  display: none;
 }
 
 .hero-inner {
-  position: relative; /* 盖在 overlay 上 */
+  position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); /* 让字在图片上更清晰一点 */
 }
 
 .hero h1 {
@@ -93,10 +84,11 @@ body {
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
 }
 
-/* 主体内容区域 */
+/* ====== 中间白色内容卡片 ====== */
+
 .content {
   max-width: var(--max-width);
-  margin: -30px auto 40px; /* 往上“浮”一点，像 Cayman 一样 */
+  margin: -30px auto 40px;  /* 往上“浮”一点 */
   background: var(--bg-content);
   border-radius: 12px;
   padding: 32px 24px 40px;
@@ -126,6 +118,7 @@ li {
   margin-bottom: 0.3rem;
 }
 
+/* footer */
 .footer {
   text-align: center;
   color: var(--text-muted);
@@ -133,14 +126,15 @@ li {
   padding: 16px 0 24px;
 }
 
-/* 手机端适配 */
+/* ====== 手机端适配 ====== */
+
 @media (max-width: 640px) {
   .hero {
     padding: 70px 12px 60px;
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.0rem;
   }
 
   .content {
