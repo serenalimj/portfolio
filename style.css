@@ -73,6 +73,7 @@ body {
 .hero-subtitle {
   margin: 0 0 1.5rem;
   font-size: 1.05rem;
+  font-weight: 600;
   color: var(--hero-subtitle);
 }
 
