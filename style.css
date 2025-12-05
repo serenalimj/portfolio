@@ -1,5 +1,5 @@
 /* ====== Serena theme: warm beige & rose ====== */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
 :root {
   /* 顶部背景图 */
   --hero-image: url("pic.jpg");
@@ -22,7 +22,8 @@
 
   --max-width: 1080px;
   --font-title: "Cormorant Garamond", serif;
-  --font-main: "Inter", sans-serif;
+  --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               system-ui, -webkit-system-font, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* 全局基础样式 */
