@@ -19,7 +19,7 @@
   --bg-content: #ebe3dc;       /* 中间卡片背景 */
   --border-subtle: #ddc5b7;    /* 细边框 */
 
-  --max-width: 880px;
+  --max-width: 1080px;
   --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                system-ui, -webkit-system-font, "Helvetica Neue", Arial, sans-serif;
 }
