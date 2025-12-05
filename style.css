@@ -164,9 +164,6 @@ li {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  margin: 60px auto;
-  max-width: 1000px;
-  padding: 20px;
 }
 
 .about-text { flex: 1.3; }
@@ -190,7 +187,8 @@ li {
   }
 }
 
-.content section {
-  padding-left: 20px;   /* 与你 .about-section 的缩进保持一致 */
-  padding-right: 20px;
+.content > section {
+  max-width: 1000px;    /* 和你原来 .about-section 的 max-width 一样 */
+  margin: 40px auto;    /* 上下留空，左右 auto 居中 */
+  padding: 20px;        /* 和你原来给 about-section 的 padding 一样 */
 }
