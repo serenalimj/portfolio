@@ -99,23 +99,6 @@ body {
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.55rem 1.2rem;      
-  border-radius: 999px;
-  background: var(--btn-bg);   
-  color: var(--btn-text);
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);  
-  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
-}
-
-.btn:hover {
-  background: var(--btn-bg-hover);     
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.20);   
-
 
 
 /* ====== 中间白色内容卡片 ====== */
