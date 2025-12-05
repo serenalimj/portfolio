@@ -1,4 +1,5 @@
 /* ====== Serena theme: warm beige & rose ====== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 :root {
   /* 顶部背景图 */
   --hero-image: url("pic.jpg");
@@ -20,8 +21,8 @@
   --border-subtle: #ddc5b7;    /* 细边框 */
 
   --max-width: 1080px;
-  --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-               system-ui, -webkit-system-font, "Helvetica Neue", Arial, sans-serif;
+  --font-title: "Cormorant Garamond", serif;
+  --font-main: "Inter", sans-serif;
 }
 
 /* 全局基础样式 */
@@ -192,3 +193,5 @@ li {
   margin: 40px auto;    /* 上下留空，左右 auto 居中 */
   padding: 20px;        /* 和你原来给 about-section 的 padding 一样 */
 }
+
+
