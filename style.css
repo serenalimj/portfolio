@@ -155,3 +155,38 @@ li {
     padding: 24px 18px 32px;
   }
 }
+
+
+/* ====== About section（左文字右图片） ====== */
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 60px auto;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.about-text { flex: 1.3; }
+
+.about-photo { flex: 1; display: flex; justify-content: center; }
+
+.about-photo img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-photo img {
+    max-width: 220px;
+  }
+}
+
