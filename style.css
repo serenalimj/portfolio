@@ -101,23 +101,20 @@ body {
 
 .btn {
   display: inline-block;
-  padding: 10px 22px;   /* 缩小按钮高度与宽度 */
-  font-size: 0.95rem;
-  border-radius: 18px;  /* 比之前更小的圆角 */
-  background: var(--accent-light);
-  color: white;
+  padding: 0.55rem 1.2rem;      
+  border-radius: 999px;
+  background: var(--btn-bg);   
+  color: var(--btn-text);
   text-decoration: none;
-  transition: all 0.25s ease;
-
-  /* 阴影更轻、更柔和 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);  
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
 
-/* hover 效果保持微妙的提升感 */
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
+  background: var(--btn-bg-hover);     
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.20);   
 
 
 
