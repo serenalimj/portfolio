@@ -99,7 +99,24 @@ body {
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
 }
 
+/* ===== 小按钮：同色，同形状，但更小、阴影更浅 ===== */
+.small-btn {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;   /* 更小尺寸 */
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;         /* 字体更小 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* 更浅阴影 */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
 
+.small-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22); /* hover 阴影仍然轻盈 */
+}
 
 /* ====== 中间白色内容卡片 ====== */
 
