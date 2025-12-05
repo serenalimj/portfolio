@@ -99,6 +99,28 @@ body {
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
 }
 
+.btn {
+  display: inline-block;
+  padding: 10px 22px;   /* 缩小按钮高度与宽度 */
+  font-size: 0.95rem;
+  border-radius: 18px;  /* 比之前更小的圆角 */
+  background: var(--accent-light);
+  color: white;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  /* 阴影更轻、更柔和 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* hover 效果保持微妙的提升感 */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+
+
 /* ====== 中间白色内容卡片 ====== */
 
 .content {
