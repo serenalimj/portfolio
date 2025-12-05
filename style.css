@@ -190,3 +190,7 @@ li {
   }
 }
 
+.content section {
+  padding-left: 20px;   /* 与你 .about-section 的缩进保持一致 */
+  padding-right: 20px;
+}
