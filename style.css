@@ -906,3 +906,21 @@ body { margin: 0; background: #f0f2f3; }
     justify-self: center;
   }
 }
+
+/* Desktop: three project cards per row. Existing tablet/mobile layouts remain. */
+@media (min-width: 1024px) {
+  #portfolio .work-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #portfolio .work-grid .cardtext {
+    min-width: 0;
+  }
+
+  #portfolio .work-grid .cardtext h3,
+  #portfolio .work-grid .cardtext p,
+  #portfolio .work-grid .cardfoot {
+    overflow-wrap: break-word;
+  }
+}
+
