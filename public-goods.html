@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Public Goods Game · Serena Li</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f0f2f3;--ink:#263547;--line:#ccd6df;--blue:#526b87;--panel:#fafbfc}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.8 'Libre Baskerville',Georgia,serif}main{max-width:1080px;margin:auto;padding:28px 32px 70px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:11px;border-bottom:1px solid var(--line);padding-bottom:20px}a{color:inherit;text-underline-offset:5px}h1,h2,h3{font-family:Italiana,Georgia,serif;font-weight:400;line-height:1.2}h1{font-size:clamp(38px,6vw,62px);margin:20px 0 18px}h2{font-size:29px;margin:0 0 18px}h3{font-size:23px;margin:0 0 12px}p{margin:0 0 18px}.intro{max-width:720px;margin:36px 0 28px}.eyebrow{letter-spacing:2px;font-size:10px;text-transform:uppercase}.layout{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}.panel{padding:26px;border:1px solid var(--line);background:var(--panel);min-width:0}.small{font-size:11px}.muted{color:#526477}.network{display:grid;grid-template-columns:1fr 25px 1fr 25px 1fr;align-items:center;margin:30px 0}.node{text-align:center}.circle{border:1px solid var(--ink);border-radius:50%;width:64px;height:64px;margin:0 auto 8px;display:grid;place-items:center;font:27px Italiana,serif}.node.selected .circle{background:var(--ink);color:var(--paper)}.edge{height:1px;background:var(--blue)}button,input,select{font:inherit}button{cursor:pointer;background:var(--ink);color:var(--paper);border:1px solid var(--ink);padding:11px 18px;min-height:44px}button.secondary{background:transparent;color:var(--ink)}button:disabled{opacity:.5;cursor:default}input,select{width:100%;padding:10px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);min-height:44px}label{display:block;font-size:12px;margin-bottom:17px}label input,label select{margin-top:6px}input[type=range]{accent-color:var(--ink);padding:0}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #668bb2;outline-offset:3px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.pill{display:inline-block;border:1px solid var(--line);padding:5px 10px;font-size:10px}.rule{border-top:1px solid var(--line);padding-top:20px;margin-top:24px}.steps{display:flex;gap:15px;font-size:11px;flex-wrap:wrap;margin-bottom:24px}.steps strong{text-decoration:underline;text-underline-offset:6px}.amount{font:46px Italiana,serif;margin:12px 0}.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.error{color:#963b3b;font-size:12px;min-height:20px}.result{padding:15px;background:#e4eaf0;margin-top:15px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}th{background:#e5eaf0}tr.you td{font-weight:700}.notice{padding:17px 20px;border-left:2px solid var(--blue);background:#e5eaf0;font-size:12px;margin-bottom:22px}.handoff{text-align:center;padding:45px 15px}.survey{max-width:650px}.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:24px 0}.score{border:1px solid var(--line);padding:20px}.score strong{display:block;font:35px Italiana,serif;margin-top:10px}details{font-size:12px}summary{cursor:pointer}footer{border-top:1px solid var(--line);padding-top:22px;margin-top:35px;font-size:11px}[hidden]{display:none!important}@media(max-width:680px){main{padding:20px 16px 45px}.layout{grid-template-columns:1fr}.panel{padding:20px}.fields{grid-template-columns:1fr}.summary-grid{grid-template-columns:1fr}.circle{width:52px;height:52px}.small{font-size:11px}}
+</style>
+</head>
+<body><main>
+<div class="top"><a href="https://serenalimj.github.io/portfolio/#work-data">← Serena Li’s portfolio</a><span>LOCAL PLAY · 3 PLAYERS · 2 ROUNDS</span><a href="https://github.com/serenalimj/public-goods-game" target="_blank" rel="noopener noreferrer">Original code ↗</a></div>
+<header class="intro"><span class="eyebrow">Interactive economics</span><h1>The Public Goods Game</h1><p>How does your place in a network shape your contribution—and your payoff?</p></header>
+<div id="app"></div>
+<footer>Adapted from Serena Li’s oTree project. Local shared-device play or solo simulation; no online matchmaking, server, or real payments. Decisions and survey responses stay in this page unless you download them. Reloading starts over.</footer>
+</main><script>
+/* ENGINE */
+const ENDOWMENTS = [1, 10, 1];
+const NEIGHBORS = [[0, 1], [0, 1, 2], [1, 2]];
+function validateContribution(player, value) {
+  return Number.isInteger(player) && player >= 0 && player < 3 &&
+    Number.isFinite(value) && value >= 0 && value <= ENDOWMENTS[player] &&
+    Math.abs(value * 100 - Math.round(value * 100)) < 1e-7;
+}
+function payoffs(contributions) {
+  if (contributions.length !== 3 || !contributions.every((v, i) => validateContribution(i, v))) {
+    throw new Error('Enter valid contributions within each player’s endowment (up to 2 decimal places).');
+  }
+  return NEIGHBORS.map((neighbors, i) => ENDOWMENTS[i] - contributions[i] +
+    neighbors.reduce((total, j) => total + contributions[j], 0) / neighbors.length);
+}
+class PublicGoodsGame {
+  constructor(mode, role) {
+    this.mode = mode; this.role = role; this.round = 1; this.records = [];
+    this.current = [null, null, null]; this.stage = 'contribute'; this.surveys = [];
+  }
+  submit(player, value) {
+    if (this.stage !== 'contribute' || this.current[player] !== null || !validateContribution(player, value)) {
+      throw new Error('Invalid contribution or this decision has already been submitted.');
+    }
+    this.current[player] = value;
+    if (this.current.every(v => v !== null)) {
+      this.records.push({ round: this.round, contributions: [...this.current], payoffs: payoffs(this.current) });
+      this.stage = 'results';
+    }
+  }
+  nextRound() {
+    if (this.stage !== 'results') throw new Error('Complete the current round first.');
+    if (this.round === 2) { this.stage = 'survey'; return; }
+    this.round++; this.current = [null, null, null]; this.stage = 'contribute';
+  }
+  totals() { return ENDOWMENTS.map((_, i) => this.records.reduce((s, r) => s + r.payoffs[i], 0)); }
+}
+
+const app = document.getElementById('app');
+let game = null, activePlayer = 0, resultsPlayer = 0, surveyPlayer = 0;
+const money = v => Number(v).toFixed(2);
+const escapeText = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function network(role) {
+  return '<div class="network" aria-label="Player 1 connected to player 2; player 2 connected to player 3">'+ENDOWMENTS.map((v,i)=>`${i?'<div class="edge"></div>':''}<div class="node ${i===role?'selected':''}"><div class="circle">${i+1}</div><span class="small">Player ${i+1}${i===role?' · you':''}<br>${v} credits</span></div>`).join('')+'</div>';
+}
+function steps(stage) {
+  return `<div class="steps"><span>Round ${game.round} / 2</span>${['contribute','results','survey'].map(s=>s===stage?'<strong>'+s+'</strong>':'<span>'+s+'</span>').join('')}</div>`;
+}
+function setup() {
+  app.innerHTML=`<div class="layout"><section class="panel"><h2>Your network, your decision.</h2><p>Every round, player 1 receives 1 credit, player 2 receives 10, and player 3 receives 1. You may contribute any amount from zero to your endowment.</p>${network(-1)}<p class="small">Your neighborhood includes yourself and the players directly connected to you. Player 1 and player 3 do not share a direct connection.</p><div class="notice">Payoff = endowment − your contribution + the average contribution in your neighborhood.</div><p class="small">There is no extra multiplier. Credits are reset each round; earned payoffs are added across the two rounds.</p></section><section class="panel"><h2>Choose how to play</h2><label>Mode<select id="mode"><option value="solo">Solo demo · two simulated players</option><option value="shared">Shared device · three human players</option></select></label><label id="role-label">Your player<select id="role"><option value="0">Player 1 · 1 credit</option><option value="1">Player 2 · 10 credits</option><option value="2">Player 3 · 1 credit</option></select></label><p class="small" id="mode-note">Simulated players choose contributions independently, before you submit.</p><div class="actions"><button id="start">Start game →</button></div><details class="rule"><summary>About this adaptation</summary><p>The original app uses an oTree server to synchronize three participants. This version runs in one browser. All calculators use the original server’s neighborhood formulas; inconsistent endpoint calculators have been corrected.</p></details></section></div>`;
+  document.getElementById('mode').onchange=e=>{const shared=e.target.value==='shared';document.getElementById('role-label').hidden=shared;document.getElementById('mode-note').textContent=shared?'Pass the device between three players. Submitted decisions are hidden until all three players finish. This is local play, not anonymous online participation.':'Simulated players choose contributions independently, before you submit.';};
+  document.getElementById('start').onclick=()=>{game=new PublicGoodsGame(document.getElementById('mode').value,Number(document.getElementById('role').value));beginRound();};
+}
+function beginRound() {
+  if(game.mode==='solo') {
+    ENDOWMENTS.forEach((v,i)=>{if(i!==game.role)game.submit(i,Math.round(Math.random()*v*100)/100);});
+    activePlayer=game.role;contribute();
+  } else {activePlayer=0;handoff();}
+}
+function handoff() {
+  app.innerHTML=steps('contribute')+`<section class="panel handoff"><span class="pill">Shared-device play</span><h2 style="margin-top:22px">Pass to player ${activePlayer+1}</h2><p>Previous decisions are hidden. Only player ${activePlayer+1} should enter the next contribution.</p><button id="ready">I’m player ${activePlayer+1} · Ready →</button></section>`;
+  document.getElementById('ready').onclick=contribute;
+}
+function contribute() {
+  const role=activePlayer, max=ENDOWMENTS[role];
+  const neighbors=NEIGHBORS[role].map(i=>'player '+(i+1)).join(', ');
+  app.innerHTML=steps('contribute')+`<div class="layout"><section class="panel"><span class="eyebrow">Player ${role+1}</span><h2 style="margin-top:12px">Make your contribution</h2>${network(role)}<p>Your endowment: <strong>${max} credits</strong>.<br>Your neighborhood: ${neighbors}.</p><form id="decision"><label>Contribution (0–${max} credits)<input id="contribution" type="number" min="0" max="${max}" step="0.01" value="0" required></label><input id="slider" aria-label="Contribution slider" type="range" min="0" max="${max}" step="0.01" value="0"><p class="small">Submitting locks your decision for this round. Calculator values do not submit a decision.</p><div class="error" id="decision-error" role="alert"></div><button type="submit">Submit contribution →</button></form></section><section class="panel"><h2>What-if calculator</h2><p class="small">Try hypothetical contributions. All three amounts are needed to calculate each player’s own neighborhood payoff correctly.</p><div class="fields">${ENDOWMENTS.map((v,i)=>`<label>Player ${i+1}${i===role?' (you)':''} · max ${v}<input id="calc-${i}" type="number" min="0" max="${v}" step="0.01" value="0"></label>`).join('')}</div><button type="button" class="secondary" id="calculate">Calculate payoffs</button><div id="calc-error" class="error" role="alert"></div><div id="calc-output" aria-live="polite"></div><div class="rule small">Player 1: 1 − c₁ + (c₁ + c₂) / 2<br>Player 2: 10 − c₂ + (c₁ + c₂ + c₃) / 3<br>Player 3: 1 − c₃ + (c₂ + c₃) / 2</div></section></div>`;
+  const number=document.getElementById('contribution'),slider=document.getElementById('slider');number.oninput=()=>{if(number.value!=='')slider.value=number.value;};slider.oninput=()=>number.value=slider.value;
+  document.getElementById('calculate').onclick=()=>{try{const values=ENDOWMENTS.map((_,i)=>{const input=document.getElementById('calc-'+i);return input.value===''?NaN:Number(input.value);});const valuesOut=payoffs(values);document.getElementById('calc-error').textContent='';document.getElementById('calc-output').innerHTML='<div class="result">'+valuesOut.map((v,i)=>`Player ${i+1}${i===role?' (you)':''}: <strong>${money(v)} credits</strong>`).join('<br>')+'</div>';}catch(e){document.getElementById('calc-error').textContent=e.message;document.getElementById('calc-output').replaceChildren();}};
+  document.getElementById('decision').onsubmit=e=>{e.preventDefault();try{game.submit(role,number.value===''?NaN:Number(number.value));if(game.stage==='results'){resultsPlayer=game.mode==='solo'?game.role:0;results();}else{activePlayer++;handoff();}}catch(error){document.getElementById('decision-error').textContent=error.message;}};
+}
+function resultTable(record,who,all=false) {
+  const indexes=all?[0,1,2]:NEIGHBORS[who];
+  return `<div class="table-wrap"><table><thead><tr><th>Player</th><th>Endowment</th><th>Contribution</th><th>Payoff</th></tr></thead><tbody>${indexes.map(i=>`<tr class="${i===who?'you':''}"><td>${i+1}${i===who?' (you)':''}</td><td>${money(ENDOWMENTS[i])}</td><td>${money(record.contributions[i])}</td><td>${money(record.payoffs[i])}</td></tr>`).join('')}</tbody></table></div>`;
+}
+function results() {
+  const r=game.records[game.records.length-1];
+  app.innerHTML=steps('results')+`<section class="panel"><span class="eyebrow">Round complete</span><h2 style="margin-top:12px">Your neighborhood’s results</h2>${game.mode==='shared'?'<label>View results as<select id="perspective">'+ENDOWMENTS.map((_,i)=>`<option value="${i}" ${i===resultsPlayer?'selected':''}>Player ${i+1}</option>`).join('')+'</select></label>':'<p class="small">You are player '+(game.role+1)+'. Other players are simulated.</p>'}${resultTable(r,resultsPlayer)}<p class="small" style="margin-top:18px">Player 2’s payoff always includes contributions from both neighbors, even when viewing results from an endpoint player’s perspective.</p><div class="amount">${money(r.payoffs[resultsPlayer])} <span class="small">credits this round</span></div><p class="small">Cumulative payoff: ${money(game.totals()[resultsPlayer])} credits.</p><div class="actions"><button id="next">${game.round===2?'Continue to final survey':'Start round 2'} →</button></div></section>`;
+  if(game.mode==='shared')document.getElementById('perspective').onchange=e=>{resultsPlayer=Number(e.target.value);results();};
+  document.getElementById('next').onclick=()=>{game.nextRound();if(game.stage==='survey'){surveyPlayer=game.mode==='solo'?game.role:0;survey();}else beginRound();};
+}
+function survey() {
+  app.innerHTML=steps('survey')+`<section class="panel survey"><h2>Final survey · Player ${surveyPlayer+1}</h2><p class="small">Responses stay in this browser page. You may skip the survey.</p><form id="survey"><label>What is your major?<input name="major" maxlength="120" required></label><label>What year are you in?<select name="year" required><option value="">Select a year</option><option>freshman</option><option>sophomore</option><option>junior</option><option>senior</option></select></label><label>How many econ classes have you taken?<input name="Econ" type="number" min="0" step="1" max="999" required></label><label>How many math classes have you taken?<input name="Math" type="number" min="0" step="1" max="999" required></label><div class="actions"><button type="submit">Save &amp; continue →</button><button id="skip" type="button" class="secondary">Skip survey</button></div></form></section>`;
+  function advance(){if(game.mode==='shared'&&surveyPlayer<2){surveyPlayer++;survey();}else{game.stage='complete';complete();}}
+  document.getElementById('survey').onsubmit=e=>{e.preventDefault();const data=new FormData(e.target);game.surveys.push({player:surveyPlayer+1,major:data.get('major').trim(),year:data.get('year'),Econ:Number(data.get('Econ')),Math:Number(data.get('Math'))});advance();};document.getElementById('skip').onclick=advance;
+}
+function download(kind) {
+  const payload={mode:game.mode,simulatedPlayers:game.mode==='solo'?[0,1,2].filter(i=>i!==game.role).map(i=>i+1):[],endowments:ENDOWMENTS,rounds:game.records,totals:game.totals(),surveys:game.surveys};
+  let data,type,ext;
+  if(kind==='json'){data=JSON.stringify(payload,null,2);type='application/json';ext='json';}
+  else {data='round,player,endowment,contribution,payoff,simulated\n'+game.records.flatMap(r=>ENDOWMENTS.map((e,i)=>[r.round,i+1,e,r.contributions[i],r.payoffs[i],game.mode==='solo'&&i!==game.role].join(','))).join('\n');type='text/csv';ext='csv';}
+  const url=URL.createObjectURL(new Blob([data],{type}));const a=document.createElement('a');a.href=url;a.download='public-goods-results.'+ext;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+function complete() {
+  app.innerHTML=`<section class="panel"><span class="eyebrow">Two rounds complete</span><h2 style="margin-top:12px">Contributions, connections &amp; outcomes.</h2><div class="notice">${game.mode==='solo'?'Solo demo: two participants were simulated.':'Shared-device game: all three decisions were entered locally.'} Payoffs are displayed to two decimals; totals use unrounded calculations.</div><div class="summary-grid">${game.totals().map((v,i)=>`<div class="score">Player ${i+1}<strong>${money(v)}</strong><span class="small">total credits</span></div>`).join('')}</div>${game.records.map(r=>'<h3 class="rule">Round '+r.round+'</h3>'+resultTable(r,-1,true)).join('')}<p class="small" style="margin-top:20px">Download results to keep a copy. JSON includes any survey responses; CSV contains round decisions and payoffs only.</p><div class="actions"><button id="json">Download JSON</button><button class="secondary" id="csv">Download CSV</button><button class="secondary" id="restart">Play again</button></div></section>`;
+  document.getElementById('json').onclick=()=>download('json');document.getElementById('csv').onclick=()=>download('csv');document.getElementById('restart').onclick=()=>{if(confirm('Start a new game? Download first if you want to keep these results.')){game=null;setup();}};
+}
+setup();
+
+</script></body></html>
