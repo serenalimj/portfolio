@@ -1,17 +1,482 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Serena Li · Data, Economics &amp; Music</title><meta name="description" content="Explore Serena Li’s projects in data analysis, economics, research, and music."><meta name="theme-color" content="#24354b"><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head><body><div id="serena-prototype">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<nav aria-label="Main navigation"><a class="brand" href="#serena-intro">Serena Li<span style="color:var(--rose)">.</span></a><div class="links"><a href="#serena-intro">About</a><a href="#serena-work">Portfolio</a><a href="#serena-contact">Contact ↗</a></div></nav>
-<main><section class="hero" id="serena-intro"><div><div class="eyebrow">Data · Economics · Music</div><h1>Finding stories<br>in data <em>&amp; sound.</em></h1><p class="bio">Hi, I’m Serena. I explore how data helps us understand the world—and how music helps us express it.</p><p class="bio">Originally from Beijing, my background spans Economics–Mathematics and Music Production at Whitman College. I work with Python, R, SQL, and Excel, and enjoy playing guitar, piano, and drums. I’m interested in storytelling through data and pursuing further study in Business Analytics.</p><div class="actions"><a class="cta" href="#serena-work">Explore my work ↓</a><a class="quiet" href="#serena-contact">Get in touch ↗</a></div></div><div><div class="art"><img class="portrait" src="https://serenalimj.github.io/portfolio/photo1.jpg" alt="Portrait of Serena Li" width="520" height="680"></div></div></section>
-<div class="interests"><span>Economics &amp; Mathematics</span><span>Data Analytics</span><span>Research</span><span>Music Production</span></div>
-<section class="portfolio" id="serena-work"><div class="sectionhead"><h2>Selected work</h2><span class="sectionnote">A little analytical. A little creative.</span></div><div class="filters" aria-label="Filter portfolio" hidden><button class="cursor-interaction" type="button" data-filter="All" aria-pressed="true">All work</button><button class="cursor-interaction" type="button" data-filter="Data" aria-pressed="false">Data &amp; Coding</button><button class="cursor-interaction" type="button" data-filter="Research" aria-pressed="false">Research</button><button class="cursor-interaction" type="button" data-filter="Music" aria-pressed="false">Music</button></div>
-<div class="grid" aria-live="polite">
-<article data-category="Data"><div class="cover"><svg viewBox="0 0 260 100" aria-hidden="true"><path d="M15 12V90H250" stroke="#a4aeb9" fill="none"/><path d="M20 24Q55 20 80 45T145 65T240 82" fill="none" stroke="#24354b" stroke-width="3"/><path d="M20 40Q65 35 95 56T170 73T240 86" fill="none" stroke="#a76d78" stroke-width="2"/><g fill="#24354b"><circle cx="20" cy="24" r="4"/><circle cx="80" cy="45" r="4"/><circle cx="145" cy="65" r="4"/><circle cx="240" cy="82" r="4"/></g></svg></div><div class="cardtext"><span class="category">Data analysis</span><h3>Child Mortality &amp; Economic Development</h3><p>Exploring global trends and the relationship between income, poverty, and child mortality.</p><div class="cardfoot"><span>Data exploration · Visualization</span><a href="https://serenalimj.github.io/child_mortality/" target="_blank" rel="noopener">View project ↗</a></div></div></article>
-<article data-category="Data"><div class="cover network"><svg viewBox="0 0 260 100" aria-hidden="true"><g stroke="#b9979c" stroke-width="1.5"><path d="M45 50L100 18L145 65L215 35L195 90L145 65L85 87L45 50L145 65M100 18L215 35M85 87L100 18" fill="none"/></g><g fill="#24354b"><circle cx="45" cy="50" r="10"/><circle cx="100" cy="18" r="8"/><circle cx="215" cy="35" r="10"/><circle cx="85" cy="87" r="7"/></g><g fill="#a76d78"><circle cx="145" cy="65" r="14"/><circle cx="195" cy="90" r="7"/></g></svg></div><div class="cardtext"><span class="category">Interactive economics</span><h3>The Public Goods Game</h3><p>An interactive game exploring cooperation and economic decisions across social networks.</p><div class="cardfoot"><span>Game design · Economic simulation</span><a href="https://github.com/serenalimj/public-goods-game" target="_blank" rel="noopener">View project ↗</a></div></div></article>
-<article data-category="Research"><div class="cover research"><div class="sheet">Research notes<span></span><span></span><span></span><span style="width:60%"></span></div></div><div class="cardtext"><span class="category">Research</span><h3>Accounting for Social Impact</h3><p>Research with Professor Veeramoothoo and Carly Martin at Whitman College, comparing nonprofit accounting needs and software including QuickBooks, Sage Intacct, and Aplos.</p><div class="cardfoot"><span>Literature review · Software evaluation</span><a href="https://serenalimj.github.io/portfolio/Combined_Abshire_Lit_Review%20(1).pdf" target="_blank" rel="noopener">Read research ↗</a></div></div></article>
-<article data-category="Music"><div class="cover music"><div class="record"></div><div class="musiclabel">September<br>24, 1991.</div></div><div class="cardtext"><span class="category">Music &amp; culture</span><h3>One Day. Four Defining Albums.</h3><p>A music zine exploring a landmark release date and the changing sound of the mainstream.</p><div class="cardfoot"><span>Music writing · Cultural analysis</span><a href="https://serenalimj.github.io/portfolio/Serena-Sep%2024,%201991.pdf" target="_blank" rel="noopener">Explore zine ↗</a></div></div></article>
-<article data-category="Data"><div class="cover game" aria-hidden="true"><span>Flappy Bird</span></div><div class="cardtext"><span class="category">Python game</span><h3>Flappy Bird</h3><p>A recreation of the classic game, built with Python and Pygame.</p><div class="cardfoot"><span>Python · Pygame</span><a href="https://github.com/serenalimj/flappy-bird" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></div></div></article><article data-category="Music"><div class="cover piano" aria-hidden="true"><span class="key"></span><span class="key"></span><span class="key"></span><span class="key"></span><span class="key"></span><span class="key"></span><span class="key"></span><span class="key"></span></div><div class="cardtext"><span class="category">Music research</span><h3>Fanny Hensel: Allegretto in C-sharp Minor</h3><p>An analysis of Op. 4, No. 2, exploring Hensel’s personal experiences and nineteenth-century musical aesthetics.</p><div class="cardfoot"><span>Musical analysis · Historical context</span><a href="https://serenalimj.github.io/portfolio/Research%20paper-Serena.pdf" target="_blank" rel="noopener noreferrer">Read paper ↗</a></div></div></article><article data-category="Music"><div class="cover wave" aria-hidden="true"><span style="height:20px"></span><span style="height:36px"></span><span style="height:52px"></span><span style="height:80px"></span><span style="height:45px"></span><span style="height:100px"></span><span style="height:65px"></span><span style="height:40px"></span><span style="height:76px"></span><span style="height:94px"></span><span style="height:60px"></span><span style="height:30px"></span><span style="height:45px"></span><span style="height:70px"></span><span style="height:40px"></span><span style="height:24px"></span></div><div class="cardtext"><span class="category">Production analysis</span><h3>If You’re Too Shy (Let Me Know)</h3><p>A track-by-track breakdown of The 1975’s song and the production techniques behind its sound.</p><div class="cardfoot"><span>Music production · Critical listening</span><a href="https://serenalimj.github.io/portfolio/If%20You%27re%20Too%20Shy-Production%20Breakdown.pdf" target="_blank" rel="noopener noreferrer">Read breakdown ↗</a></div></div></article></div></section>
-</main><section class="contact" id="serena-contact"><div><div class="eyebrow" style="color:#d5b0b7">Let’s connect</div><h2>Good things start with a conversation.</h2><p>Projects, research, music—or a new idea.</p></div><a class="email" href="mailto:serenalim567@gmail.com">serenalim567@gmail.com ↗</a></section><footer><span>© <span id="year">2026</span> Serena Li</span><span><a href="https://github.com/serenalimj" target="_blank" rel="noopener">GitHub ↗</a> &nbsp; <a href="https://www.linkedin.com/in/mujing-li-7a3a5b397/" target="_blank" rel="noopener">LinkedIn ↗</a></span></footer>
+  <title>Serena Li · Data, Economics &amp; Music</title>
 
-</div>
-</body></html>
+  <meta
+    name="description"
+    content="Explore Serena Li’s projects in data analysis, economics, research, and music."
+  >
+  <meta name="theme-color" content="#24354b">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div id="serena-prototype">
+
+    <!-- ==================== 顶部导航 ==================== -->
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#serena-intro">
+        Serena Li<span style="color: var(--rose)">.</span>
+      </a>
+
+      <div class="links">
+        <a href="#serena-intro">About</a>
+        <a href="#serena-work">Portfolio</a>
+        <a href="#serena-contact">Contact ↗</a>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- ==================== 个人介绍 ==================== -->
+      <section class="hero" id="serena-intro">
+        <div>
+          <div class="eyebrow">Data · Economics · Music</div>
+
+          <h1>
+            Finding stories<br>
+            in data <em>&amp; sound.</em>
+          </h1>
+
+          <p class="bio">
+            Hi, I’m Serena. I explore how data helps us understand
+            the world—and how music helps us express it.
+          </p>
+
+          <p class="bio">
+            Originally from Beijing, my background spans Economics–Mathematics
+            and Music Production at Whitman College. I work with Python, R,
+            SQL, and Excel, and enjoy playing guitar, piano, and drums.
+            I’m interested in storytelling through data and pursuing
+            further study in Business Analytics.
+          </p>
+
+          <div class="actions">
+            <a class="cta" href="#serena-work">
+              Explore my work ↓
+            </a>
+
+            <a class="quiet" href="#serena-contact">
+              Get in touch ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 个人照片：下次替换同名照片时，可将 v=2 改成 v=3 -->
+        <div>
+          <div class="art">
+            <img
+              class="portrait"
+              src="photo1.jpg?v=2"
+              alt="Portrait of Serena Li"
+              width="520"
+              height="680"
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 兴趣方向 ==================== -->
+      <div class="interests">
+        <span>Economics &amp; Mathematics</span>
+        <span>Data Analytics</span>
+        <span>Research</span>
+        <span>Music Production</span>
+      </div>
+
+      <!-- ==================== 作品展示 ==================== -->
+      <section class="portfolio" id="serena-work">
+        <div class="sectionhead">
+          <h2>Selected work</h2>
+
+          <span class="sectionnote">
+            A little analytical. A little creative.
+          </span>
+        </div>
+
+        <!-- 分类按钮由 script.js 启用 -->
+        <div class="filters" aria-label="Filter portfolio" hidden>
+          <button
+            class="cursor-interaction"
+            type="button"
+            data-filter="All"
+            aria-pressed="true"
+          >
+            All work
+          </button>
+
+          <button
+            class="cursor-interaction"
+            type="button"
+            data-filter="Data"
+            aria-pressed="false"
+          >
+            Data &amp; Coding
+          </button>
+
+          <button
+            class="cursor-interaction"
+            type="button"
+            data-filter="Research"
+            aria-pressed="false"
+          >
+            Research
+          </button>
+
+          <button
+            class="cursor-interaction"
+            type="button"
+            data-filter="Music"
+            aria-pressed="false"
+          >
+            Music
+          </button>
+        </div>
+
+        <div class="grid" aria-live="polite">
+
+          <!-- 作品 1：儿童死亡率分析 -->
+          <article data-category="Data">
+            <div class="cover">
+              <svg viewBox="0 0 260 100" aria-hidden="true">
+                <path
+                  d="M15 12V90H250"
+                  stroke="#a4aeb9"
+                  fill="none"
+                />
+                <path
+                  d="M20 24Q55 20 80 45T145 65T240 82"
+                  fill="none"
+                  stroke="#24354b"
+                  stroke-width="3"
+                />
+                <path
+                  d="M20 40Q65 35 95 56T170 73T240 86"
+                  fill="none"
+                  stroke="#a76d78"
+                  stroke-width="2"
+                />
+
+                <g fill="#24354b">
+                  <circle cx="20" cy="24" r="4" />
+                  <circle cx="80" cy="45" r="4" />
+                  <circle cx="145" cy="65" r="4" />
+                  <circle cx="240" cy="82" r="4" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="cardtext">
+              <span class="category">Data analysis</span>
+
+              <h3>Child Mortality &amp; Economic Development</h3>
+
+              <p>
+                Exploring global trends and the relationship between
+                income, poverty, and child mortality.
+              </p>
+
+              <div class="cardfoot">
+                <span>Data exploration · Visualization</span>
+
+                <a
+                  href="https://serenalimj.github.io/child_mortality/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View project ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 作品 2：公共物品游戏 -->
+          <article data-category="Data">
+            <div class="cover network">
+              <svg viewBox="0 0 260 100" aria-hidden="true">
+                <g stroke="#b9979c" stroke-width="1.5">
+                  <path
+                    d="M45 50L100 18L145 65L215 35L195 90L145 65L85 87L45 50L145 65M100 18L215 35M85 87L100 18"
+                    fill="none"
+                  />
+                </g>
+
+                <g fill="#24354b">
+                  <circle cx="45" cy="50" r="10" />
+                  <circle cx="100" cy="18" r="8" />
+                  <circle cx="215" cy="35" r="10" />
+                  <circle cx="85" cy="87" r="7" />
+                </g>
+
+                <g fill="#a76d78">
+                  <circle cx="145" cy="65" r="14" />
+                  <circle cx="195" cy="90" r="7" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="cardtext">
+              <span class="category">Interactive economics</span>
+
+              <h3>The Public Goods Game</h3>
+
+              <p>
+                An interactive game exploring cooperation and economic
+                decisions across social networks.
+              </p>
+
+              <div class="cardfoot">
+                <span>Game design · Economic simulation</span>
+
+                <a
+                  href="https://github.com/serenalimj/public-goods-game"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View project ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 作品 3：非营利组织会计研究 -->
+          <article data-category="Research">
+            <div class="cover research">
+              <div class="sheet">
+                Research notes
+                <span></span>
+                <span></span>
+                <span></span>
+                <span style="width: 60%"></span>
+              </div>
+            </div>
+
+            <div class="cardtext">
+              <span class="category">Research</span>
+
+              <h3>Accounting for Social Impact</h3>
+
+              <p>
+                Research with Professor Veeramoothoo and Carly Martin
+                at Whitman College, comparing nonprofit accounting needs
+                and software including QuickBooks, Sage Intacct, and Aplos.
+              </p>
+
+              <div class="cardfoot">
+                <span>Literature review · Software evaluation</span>
+
+                <a
+                  href="https://serenalimj.github.io/portfolio/Combined_Abshire_Lit_Review%20(1).pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Read research ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 作品 4：Music Zine -->
+          <article data-category="Music">
+            <div class="cover music">
+              <div class="record"></div>
+
+              <div class="musiclabel">
+                September<br>
+                24, 1991.
+              </div>
+            </div>
+
+            <div class="cardtext">
+              <span class="category">Music &amp; culture</span>
+
+              <h3>One Day. Four Defining Albums.</h3>
+
+              <p>
+                A music zine exploring a landmark release date
+                and the changing sound of the mainstream.
+              </p>
+
+              <div class="cardfoot">
+                <span>Music writing · Cultural analysis</span>
+
+                <a
+                  href="https://serenalimj.github.io/portfolio/Serena-Sep%2024,%201991.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Explore zine ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 作品 5：Flappy Bird -->
+          <article data-category="Data">
+            <div class="cover game" aria-hidden="true">
+              <span>Flappy Bird</span>
+            </div>
+
+            <div class="cardtext">
+              <span class="category">Python game</span>
+
+              <h3>Flappy Bird</h3>
+
+              <p>
+                A recreation of the classic game,
+                built with Python and Pygame.
+              </p>
+
+              <div class="cardfoot">
+                <span>Python · Pygame</span>
+
+                <a
+                  href="https://github.com/serenalimj/flappy-bird"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 作品 6：Fanny Hensel 音乐研究 -->
+          <article data-category="Music">
+            <div class="cover piano" aria-hidden="true">
+              <span class="key"></span>
+              <span class="key"></span>
+              <span class="key"></span>
+              <span class="key"></span>
+              <span class="key"></span>
+              <span class="key"></span>
+              <span class="key"></span>
+              <span class="key"></span>
+            </div>
+
+            <div class="cardtext">
+              <span class="category">Music research</span>
+
+              <h3>Fanny Hensel: Allegretto in C-sharp Minor</h3>
+
+              <p>
+                An analysis of Op. 4, No. 2, exploring Hensel’s personal
+                experiences and nineteenth-century musical aesthetics.
+              </p>
+
+              <div class="cardfoot">
+                <span>Musical analysis · Historical context</span>
+
+                <a
+                  href="https://serenalimj.github.io/portfolio/Research%20paper-Serena.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Read paper ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 作品 7：The 1975 制作分析 -->
+          <article data-category="Music">
+            <div class="cover wave" aria-hidden="true">
+              <span style="height: 20px"></span>
+              <span style="height: 36px"></span>
+              <span style="height: 52px"></span>
+              <span style="height: 80px"></span>
+              <span style="height: 45px"></span>
+              <span style="height: 100px"></span>
+              <span style="height: 65px"></span>
+              <span style="height: 40px"></span>
+              <span style="height: 76px"></span>
+              <span style="height: 94px"></span>
+              <span style="height: 60px"></span>
+              <span style="height: 30px"></span>
+              <span style="height: 45px"></span>
+              <span style="height: 70px"></span>
+              <span style="height: 40px"></span>
+              <span style="height: 24px"></span>
+            </div>
+
+            <div class="cardtext">
+              <span class="category">Production analysis</span>
+
+              <h3>If You’re Too Shy (Let Me Know)</h3>
+
+              <p>
+                A track-by-track breakdown of The 1975’s song
+                and the production techniques behind its sound.
+              </p>
+
+              <div class="cardfoot">
+                <span>Music production · Critical listening</span>
+
+                <a
+                  href="https://serenalimj.github.io/portfolio/If%20You%27re%20Too%20Shy-Production%20Breakdown.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Read breakdown ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================== 联系方式 ==================== -->
+    <section class="contact" id="serena-contact">
+      <div>
+        <div class="eyebrow" style="color: #d5b0b7">
+          Let’s connect
+        </div>
+
+        <h2>Good things start with a conversation.</h2>
+
+        <p>Projects, research, music—or a new idea.</p>
+      </div>
+
+      <a class="email" href="mailto:serenalim567@gmail.com">
+        serenalim567@gmail.com ↗
+      </a>
+    </section>
+
+    <!-- ==================== 页脚 ==================== -->
+    <footer>
+      <span>
+        © <span id="year">2026</span> Serena Li
+      </span>
+
+      <span>
+        <a
+          href="https://github.com/serenalimj"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+
+        &nbsp;
+
+        <a
+          href="https://www.linkedin.com/in/mujing-li-7a3a5b397/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn ↗
+        </a>
+      </span>
+    </footer>
+
+  </div>
+</body>
+</html>
