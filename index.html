@@ -258,10 +258,35 @@
               </div>
             </article>
             <article data-category="Data">
-              <div class="cover game" aria-hidden="true">
-                <span>
-                  Flappy Bird
-                </span>
+              <div class="cover" aria-hidden="true">
+                <!-- Decorative game illustration in the portfolio palette. -->
+                <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="bird-finish-checks" width="12" height="12" patternUnits="userSpaceOnUse">
+                      <rect width="12" height="12" fill="#e1e7ed"/>
+                      <path d="M0 0h6v6H0zM6 6h6v6H6z" fill="#8d9cac"/>
+                    </pattern>
+                  </defs>
+                  <path d="M18 132H382" stroke="#9baabb" stroke-width="1"/>
+                  <g fill="#c0ccd8" stroke="#526b87" stroke-width="1.7">
+                    <path d="M65 96h30v36H65z"/><path d="M61 84h38v16H61z" fill="#a5b6c7"/>
+                    <path d="M223 0h30v38h-30z"/><path d="M219 34h38v16h-38z" fill="#a5b6c7"/>
+                    <path d="M223 116h30v16h-30z"/><path d="M219 104h38v16h-38z" fill="#a5b6c7"/>
+                    <path d="M337 86h30v46h-30z" fill="url(#bird-finish-checks)"/>
+                    <path d="M333 73h38v17h-38z" fill="url(#bird-finish-checks)"/>
+                  </g>
+                  <g stroke="#263547" stroke-width="2" stroke-linejoin="round">
+                    <path d="M128 65h7V54h12v-6h24v6h9v10h8v15h-9v10h-30v-6h-14v-8h-7z" fill="#a5b6c7"/>
+                    <path d="M132 67h21v7h7v8h-21v-7h-7z" fill="#e1e7ed"/>
+                    <path d="M159 51h13v6h7v16h-20z" fill="#fafbfc"/>
+                    <path d="M174 71h22v8h-23v6h-10V74z" fill="#526b87"/>
+                    <path d="M170 58h5v7h-5z" fill="#263547" stroke="none"/>
+                  </g>
+                  <g stroke="#8d9cac" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <path d="M102 66h14M94 75h20M108 84h10"/>
+                    <path d="M292 24v6M289 27h6M312 56v6M309 59h6M46 32v6M43 35h6"/>
+                  </g>
+                </svg>
               </div>
               <div class="cardtext">
                 <span class="category">
@@ -537,6 +562,7 @@
   </div>
 </body>
 </html>
+
 
 
 
