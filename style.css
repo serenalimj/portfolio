@@ -873,3 +873,36 @@ body { margin: 0; background: #f0f2f3; }
 #portfolio #about-me {
   border-top: 1px solid #26354726;
 }
+
+/* Compact About rows with vertically centered copy. */
+#portfolio .about-story-row {
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+
+#portfolio .about-story-photo {
+  max-width: 220px;
+  aspect-ratio: 4 / 5;
+}
+
+#portfolio .about-story-row .about-page-copy p:last-child {
+  margin-bottom: 0;
+}
+
+#portfolio .about-story-row + .about-story-row {
+  margin-top: 28px;
+  padding-top: 28px;
+}
+
+@media (max-width: 600px) {
+  #portfolio .about-story-row {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  #portfolio .about-story-photo {
+    max-width: 200px;
+    justify-self: center;
+  }
+}
