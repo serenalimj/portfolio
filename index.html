@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=10">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -19,9 +19,7 @@
         SERENA LI
       </a>
       <nav aria-label="Main navigation">
-        <a href="#dark-home">
-          About
-        </a>
+        <a href="#about-me">About</a>
         <a href="#dark-work">
           Portfolio
         </a>
@@ -45,7 +43,7 @@
             Hi, I’m Serena. I explore how data helps us understand the world—and how music helps us express it.
           </p>
           <p class="intro">
-            Originally from Beijing, my background spans Economics–Mathematics and Music Production at Whitman College. I work with Python, R, SQL, and Excel, and enjoy playing guitar, piano, and a little drums. I’m interested in storytelling through data and pursuing further study in Business Analytics.
+            Originally from Beijing, I’m a Master of Business Analytics student at UBC Sauder, with a background in Economics-Mathematics and Music Production at Whitman College. My interests bring together data, people, and music.
           </p>
           <div class="hero-actions">
             <a class="solid-link" href="#dark-work">
@@ -79,6 +77,36 @@
           <img src="photo1.jpg?v=4" alt="Serena Li" width="480" height="480">
         </figure>
       </section>
+      <section class="about-page" id="about-me" aria-labelledby="about-heading">
+      <div class="about-page-heading">
+        <h2 id="about-heading">About Me</h2>
+      </div>
+
+      <div class="about-story">
+        <section class="about-story-row" aria-label="Data and background">
+          <figure class="life-frame about-story-photo">
+            <div class="photo-placeholder"><span>01</span><p>职业或日常照片</p></div>
+            <img src="about-life-1.jpg" alt="Serena’s professional and everyday life" loading="lazy" onerror="this.remove()">
+          </figure>
+          <div class="about-page-copy">
+            <p>Hi, I’m Serena, a Master of Business Analytics student at UBC Sauder with a background in data analytics, user behavior analysis, and quantitative research. I enjoy exploring how people use data and turning complex information into clear, actionable insights.</p>
+            <p>Using Python, R, SQL, and Tableau, I’ve worked on projects spanning customer engagement, dashboard optimization, and resource allocation. I bring a research-driven mindset and a collaborative approach to solving business problems, connecting data with the people and decisions behind it.</p>
+          
+          </div>
+        </section>
+        <section class="about-story-row" aria-label="Music and creative life">
+          <figure class="life-frame about-story-photo">
+            <div class="photo-placeholder"><span>02</span><p>录音室或音乐照片</p></div>
+            <img src="about-life-2.jpg" alt="Serena’s music and studio life" loading="lazy" onerror="this.remove()">
+          </figure>
+          <div class="about-page-copy">
+            <p>Before UBC, I studied at Whitman College in the US, where I double majored in Economics-Mathematics and Music Production. Music has always been a big part of my life. I play guitar, piano, and a little drums, and I sang in the college chorale.</p>
+            <p>I also explored music theory and history through coursework and research. Above all, I love making music and have been creating original tracks and songs using digital audio workstations.</p>
+          
+          </div>
+        </section>
+      </div>
+    </section>
       <section class="work" id="dark-work">
         <nav class="section-jumps" aria-label="Portfolio sections">
           <a href="#work-data">
