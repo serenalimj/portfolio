@@ -632,3 +632,18 @@ body { margin: 0; background: #f0f2f3; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* 圆形照片，优先显示人物和地面涂鸦 */
+#portfolio .hero-photo {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#portfolio .hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  border-radius: 50%;
+}
