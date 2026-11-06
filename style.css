@@ -633,17 +633,36 @@ body { margin: 0; background: #f0f2f3; }
   html { scroll-behavior: auto; }
 }
 
-/* 圆形照片，优先显示人物和地面涂鸦 */
-#portfolio .hero-photo {
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
+/* Serif typography for body copy, navigation, labels and links. */
+#portfolio {
+  font-family: "Libre Baskerville", Georgia, serif;
 }
 
-#portfolio .hero-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
-  border-radius: 50%;
+#portfolio p,
+#portfolio .hero .intro,
+#portfolio .cardtext p,
+#portfolio nav a,
+#portfolio .overline,
+#portfolio .sectionlabel,
+#portfolio .sectionnote,
+#portfolio .category,
+#portfolio .tag,
+#portfolio .number,
+#portfolio .cardfoot,
+#portfolio .hero-actions,
+#portfolio .journal-link,
+#portfolio .outline,
+#portfolio .section-jumps,
+#portfolio .contact a,
+#portfolio footer,
+#portfolio figcaption,
+#portfolio button {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-weight: 400;
+}
+
+#portfolio p,
+#portfolio .hero .intro,
+#portfolio .cardtext p {
+  line-height: 1.85;
 }
