@@ -21,8 +21,8 @@
     h1 { font: 45px/1.15 Italiana, Georgia, serif; margin: 27px 0 38px; }
     .collection { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; padding-top: 26px; border-top: 1px solid var(--rule); }
     .song { min-width: 0; padding-bottom: 22px; border-bottom: 1px solid var(--rule); }
-    .song:nth-child(2) { margin-top: 52px; }
-    .song:nth-child(3) { margin-top: 20px; }
+    .song:nth-child(2) { margin-top: 0; }
+    .song:nth-child(3) { margin: 0; }
     .song-heading { display: flex; align-items: center; gap: 18px; min-width: 0; margin-bottom: 19px; }
     .cover { position: relative; width: 104px; aspect-ratio: 1; flex-shrink: 0; background: #dce3e9; }
     .cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -34,7 +34,7 @@
     a:focus-visible, audio:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
     @media (max-width: 1000px) {
       .collection { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .song:nth-child(3) { margin-top: 0; margin-left: 35px; }
+      .song:nth-child(3) { margin: 0; }
     }
     @media (max-width: 620px) {
       main { padding: 30px 7% 55px; }
@@ -120,3 +120,4 @@
   </script>
 </body>
 </html>
+
