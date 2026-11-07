@@ -27,7 +27,7 @@
     .cover { position: relative; width: 104px; aspect-ratio: 1; flex-shrink: 0; background: #dce3e9; }
     .cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .fallback { height: 100%; display: grid; place-items: center; font: 28px Italiana, Georgia, serif; }
-    h2 { font: 23px/1.2 Italiana, Georgia, serif; font-weight: 400; margin: 0; overflow-wrap: anywhere; }
+    h3 { font: 23px/1.2 Italiana, Georgia, serif; font-weight: 400; margin: 0; overflow-wrap: anywhere; }
     audio { width: 100%; height: 38px; display: block; color-scheme: light; }
     .audio-error { font-size: 10px; margin: 12px 0 0; }
     footer { max-width: 1300px; margin: auto; border-top: 1px solid var(--rule); padding: 20px 6%; font-size: 10px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
@@ -45,8 +45,13 @@
       .song:nth-child(n) { margin: 0; }
       .song-heading { gap: 20px; }
       .cover { width: 88px; }
-      h2 { font-size: 23px; }
+      h3 { font-size: 23px; }
     }
+    /* Clearly separated collections; all tracks stay aligned. */
+    .music-section + .music-section { margin-top: 48px; }
+    .section-title { font: 29px/1.2 Italiana, Georgia, serif; margin: 0 0 20px; }
+    .song:nth-child(n) { margin: 0; }
+    .credits { font-size: 10px; line-height: 1.9; margin: 15px 0 0; }
   </style>
 </head>
 <body>
@@ -61,31 +66,57 @@
   <main>
     <a class="back" href="index.html#work-music">← Back to music</a>
     <h1>Original Music</h1>
-    <section class="collection" aria-label="Original songs">
-      <article class="song">
+    <section class="music-section" aria-labelledby="instrumental-heading">
+      <h2 class="section-title" id="instrumental-heading">Instrumental</h2>
+      <div class="collection">
+<article class="song">
         <div class="song-heading">
           <div class="cover"><span class="fallback" aria-hidden="true">u.</span><img src="unordnung.jpg" data-cover="unordnung" alt="unordnung cover" width="104" height="104"></div>
-          <h2>unordnung</h2>
+          <h3>unordnung</h3>
         </div>
         <audio controls preload="none" aria-label="Play unordnung" src="unordnung.mp3">Your browser does not support audio playback. <a href="unordnung.mp3">Open MP3</a></audio>
         <p class="audio-error" hidden role="status">Audio unavailable. Please check that unordnung.mp3 has been uploaded.</p>
       </article>
-      <article class="song">
+<article class="song">
         <div class="song-heading">
           <div class="cover"><span class="fallback" aria-hidden="true">ls.</span><img src="liquid%20sunlight.jpg" data-cover="liquid sunlight" alt="liquid sunlight cover" width="104" height="104"></div>
-          <h2>liquid sunlight</h2>
+          <h3>liquid sunlight</h3>
         </div>
         <audio controls preload="none" aria-label="Play liquid sunlight" src="liquid%20sunlight.mp3">Your browser does not support audio playback. <a href="liquid%20sunlight.mp3">Open MP3</a></audio>
         <p class="audio-error" hidden role="status">Audio unavailable. Please check that liquid sunlight.mp3 has been uploaded.</p>
       </article>
+<article class="song">
+        <div class="song-heading">
+          <div class="cover"><span class="fallback" aria-hidden="true">fmh.</span><img src="my%20fullish%20heart.jpg" data-cover="my fullish heart" alt="my fullish heart cover" width="104" height="104"></div>
+          <h3>my fullish heart</h3>
+        </div>
+        <audio controls preload="none" aria-label="Play my fullish heart" src="my%20fullish%20heart.mp3">Your browser does not support audio playback. <a href="my%20fullish%20heart.mp3">Open MP3</a></audio>
+        <p class="audio-error" hidden role="status">Audio unavailable. Please check that my fullish heart.mp3 has been uploaded.</p>
+      </article>
       <article class="song">
         <div class="song-heading">
-          <div class="cover"><span class="fallback" aria-hidden="true">fmh.</span><img src="foolish%20my%20heart.jpg" data-cover="foolish my heart" alt="foolish my heart cover" width="104" height="104"></div>
-          <h2>foolish my heart</h2>
+          <div class="cover"><span class="fallback" aria-hidden="true">slm.</span><img src="something%20like%20me.jpg" data-cover="something like me" alt="something like me cover" width="104" height="104"></div>
+          <h3>something like me</h3>
         </div>
-        <audio controls preload="none" aria-label="Play foolish my heart" src="foolish%20my%20heart.mp3">Your browser does not support audio playback. <a href="foolish%20my%20heart.mp3">Open MP3</a></audio>
-        <p class="audio-error" hidden role="status">Audio unavailable. Please check that foolish my heart.mp3 has been uploaded.</p>
+        <audio controls preload="none" aria-label="Play something like me" src="something%20like%20me.mp3">Your browser does not support audio playback. <a href="something%20like%20me.mp3">Open MP3</a></audio>
+        <p class="audio-error" hidden role="status">Audio unavailable. Please check that something like me.mp3 has been uploaded.</p>
+        
       </article>
+      </div>
+    </section>
+    <section class="music-section" aria-labelledby="songs-heading">
+      <h2 class="section-title" id="songs-heading">Songs</h2>
+      <div class="collection">
+      <article class="song">
+        <div class="song-heading">
+          <div class="cover"><span class="fallback" aria-hidden="true">ls.</span><img src="loving%20strangers%20%28cover%29.jpg" data-cover="loving strangers (cover)" alt="loving strangers (cover) cover" width="104" height="104"></div>
+          <h3>loving strangers (cover)</h3>
+        </div>
+        <audio controls preload="none" aria-label="Play loving strangers (cover)" src="loving%20strangers%20%28cover%29.mp3">Your browser does not support audio playback. <a href="loving%20strangers%20%28cover%29.mp3">Open MP3</a></audio>
+        <p class="audio-error" hidden role="status">Audio unavailable. Please check that loving strangers (cover).mp3 has been uploaded.</p>
+        <p class="credits">Vocals: Anran He<br>Guitar, Arrangement, Recording &amp; Mixing: Serena</p>
+      </article>
+      </div>
     </section>
   </main>
   <footer><span>© <span id="year">2026</span> Serena Li</span><a href="mailto:serenalim567@gmail.com">Email ↗</a></footer>
@@ -120,4 +151,5 @@
   </script>
 </body>
 </html>
+
 
